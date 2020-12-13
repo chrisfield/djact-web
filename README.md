@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# DJACT-WEB A starter/demo react frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A starter/demo React web frontend written in Typescript. An Django implemention of the backend it uses can be found [here](https://github.com/chrisfield/djact-api/)
 
-## Available Scripts
+Includes:
+- routing
+- authentification
 
-In the project directory, you can run:
+The authentification makes api calls to a Django app that implements [REST framework JWT](https://jpadilla.github.io/django-rest-framework-jwt/)
 
-### `yarn start`
+## Getting Started
+Check the node version. This was developed on `v14.7.0` but it is likely to work on earlier versions too.
+### Clone the repo & cd to its root folder:
+```
+git clone git@github.com:chrisfield/djact-web.git
+cd djact-web
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install dependencies
+```
+yarn install
+```
+or Use `npm` if you prefer
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Override enviroment variables as needed
+Rather than editing `.env` it is better to create a `.env.local` file.
 
-### `yarn test`
+### Run the server
+yarn start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### CORS errors
+If you get cross origin errors you may need to add the frontend url (like http://localhost:3030) to`CORS_ORIGIN_WHITELIST` in [django api app settings.py](https://github.com/chrisfield/djact-api/blob/master/mysite/settings.py).  
