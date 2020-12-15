@@ -1475,6 +1475,17 @@
     make-plural "^6.2.2"
     messageformat-parser "^4.1.3"
 
+"@lingui/loader@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@lingui/loader/-/loader-3.3.0.tgz#7071e35edf553414263e290e019412991332b3ec"
+  integrity sha512-MFHAQnr/dRuVmPGH+2k7F6qJlqed79hI4vVHE6y+IZlryRNB6RFDr+09pY0pKZhG1qeKevYIu+k4lUsiMZXqMw==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@lingui/cli" "^3.3.0"
+    "@lingui/conf" "^3.3.0"
+    loader-utils "^2.0.0"
+    ramda "^0.27.1"
+
 "@lingui/macro@^3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@lingui/macro/-/macro-3.3.0.tgz#1aab196c2f356a3e4cc7643305d49137aa6d7f3b"
