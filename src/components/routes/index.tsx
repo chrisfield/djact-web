@@ -3,9 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './protected-route';
 
 const Home = lazy(() => import('../home'));
-const Map = lazy(() => import('../map'));
 const Login = lazy(() => import('../auth/login'));
 const Signup = lazy(() => import('../auth/signup'));
+
+const User = lazy(() => import('../user'));
+const Map = lazy(() => import('../map'));
 
 
 const Routes = () => {
@@ -16,6 +18,7 @@ const Routes = () => {
         <Route path='/login' component={() => (<Login />)}/>
         <Route path='/signup' component={() => (<Signup />)}/>
         <ProtectedRoute>
+          <Route path='/user' component={() => (<User />)}/>  
           <Route path='/map' component={() => (<Map />)}/>  
         </ProtectedRoute>
       </Switch>
