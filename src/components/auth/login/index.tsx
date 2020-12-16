@@ -23,7 +23,9 @@ const Login: React.FC = () => {
       token,
       username: un,
     }: { token: string; username: string } = await res.json();
-    persistUserLogin({ token, username: un });
+    if (token) {
+      persistUserLogin({ token, username: un });
+    }
   };
 
   return <LoginForm onLogin={handleLogin} />;
