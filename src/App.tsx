@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
-import Routes from './components/routes';
-import './App.css';
-import { i18n } from '@lingui/core';
-import { I18nProvider } from '@lingui/react';
+import React, { useEffect } from "react";
+import { i18n } from "@lingui/core";
+import { I18nProvider } from "@lingui/react";
 
-import { defaultLocale, dynamicActivate } from './i18n';
-import AuthProvider from './components/auth/context';
-import HeaderBar from './components/header-bar';
+import "./App.css";
+import Routes from "./components/routes";
+import { defaultLocale, dynamicActivate } from "./i18n";
+import AuthProvider from "./components/auth/context";
+import HeaderBar from "./components/header-bar";
 
-function App() {
+const App: React.FC = () => {
   useEffect(() => {
-    dynamicActivate(defaultLocale)
-  }, [])
+    dynamicActivate(defaultLocale);
+  }, []);
   return (
     <I18nProvider i18n={i18n}>
       <AuthProvider>
@@ -24,6 +24,6 @@ function App() {
       </AuthProvider>
     </I18nProvider>
   );
-}
+};
 
 export default App;

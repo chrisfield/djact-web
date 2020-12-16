@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 type UsernameAndPassword = {
   username: string;
@@ -13,38 +13,42 @@ type Props = {
 };
 
 const Signup: React.FC<Props> = ({ onSignup }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async(e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await onSignup({username, password});
+    await onSignup({ username, password });
   };
 
   return (
     <div>
       Already have an account? <Link to="/login">Login here</Link>
       <form onSubmit={handleSubmit}>
-        <label>Username:
+        <label htmlFor="username01">
+          Username:
           <input
+            id="username01"
             name="username"
-            value={username} 
-            onChange={e => setUsername(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </label>
-        <label>Password:
+        <label htmlFor="password01">
+          Password:
           <input
+            id="password01"
             type="password"
             name="password"
             autoComplete="on"
-            value={password} 
-            onChange={e => setPassword(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button>Signup</button>
+        <button type="submit">Signup</button>
       </form>
     </div>
   );
-}
+};
 
 export default Signup;
