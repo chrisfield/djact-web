@@ -5,11 +5,12 @@ import { Clusterer } from "@react-google-maps/marker-clusterer";
 
 type props = {
   clusterer?: Clusterer;
+  name: string;
   lat: number;
   lng: number;
 };
 
-const MapMarker: React.FC<props> = ({ clusterer, lat, lng }) => (
+const MapMarker: React.FC<props> = ({ clusterer, name, lat, lng }) => (
   <Marker
     clusterer={clusterer}
     position={{ lat, lng }}
@@ -19,7 +20,7 @@ const MapMarker: React.FC<props> = ({ clusterer, lat, lng }) => (
       scaledSize: new google.maps.Size(33, 47),
       labelOrigin: new google.maps.Point(16, 15),
     }}
-    // label={{ color: 'white', text: 'here'}}
+    label={{ color: "white", text: name }}
   />
 );
 

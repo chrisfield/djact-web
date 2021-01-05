@@ -6,7 +6,7 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api";
 
-import SiteMarker from "./map-marker";
+import MapMarker from "./map-marker";
 
 const containerStyle = {
   width: "1200px",
@@ -25,7 +25,7 @@ const mapOptions = {
 };
 
 type props = {
-  locations: { lat: number; lng: number }[];
+  locations: { name: string; lat: number; lng: number }[];
 };
 
 const Map: React.FC<props> = ({ locations }) => {
@@ -53,9 +53,10 @@ const Map: React.FC<props> = ({ locations }) => {
       >
         <MarkerClusterer>
           {(clusterer) =>
-            locations.map(({ lat, lng }) => (
-              <SiteMarker
+            locations.map(({ name, lat, lng }) => (
+              <MapMarker
                 key={`${lat}-${lng}`}
+                name={name}
                 lat={lat}
                 lng={lng}
                 clusterer={clusterer}
@@ -69,8 +70,8 @@ const Map: React.FC<props> = ({ locations }) => {
 };
 
 const locations = [
-  { lat: 55, lng: -2 },
-  { lat: 55, lng: -3 },
+  { name: "The Hill", lat: 55, lng: -2 },
+  { name: "The Wood", lat: 55, lng: -3 },
 ];
 
 export default React.memo(() => <Map locations={locations} />);
